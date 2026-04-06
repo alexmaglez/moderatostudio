@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Moderato Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logos/logo-horizontal-verde.png" alt="Moderato Studio" style="height: 120px; width: auto; display: block;" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">
+      <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn-outline">Hablemos</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero page-hero-compact">
+      <div class="page-hero-content reveal">
+        <p class="section-eyebrow">Nuestro trabajo</p>
+        <h1 class="page-title">Portfolio</h1>
+        <p class="page-intro">Una selección de proyectos concebidos para artistas e instituciones que necesitan una imagen precisa, sobria y con verdadera profundidad visual. Cada pieza combina estrategia, sensibilidad estética y conocimiento del contexto musical al que se dirige.</p>
+      </div>
+    </section>
+
+    <section class="portfolio-page-section">
+      <div class="portfolio-filters reveal">
+        <button type="button" class="btn-outline filter-button is-active" data-filter="all">Todos</button>
+        <button type="button" class="btn-outline filter-button" data-filter="cobertura-audiovisual">Cobertura audiovisual</button>
+        <button type="button" class="btn-outline filter-button" data-filter="fotografia-y-video">Fotografía y vídeo</button>
+        <button type="button" class="btn-outline filter-button" data-filter="rebranding">Rebranding</button>
+        <button type="button" class="btn-outline filter-button" data-filter="contenido-para-redes">Contenido para redes</button>
+      </div>
+
+      <div class="portfolio-page-grid">
+        <article class="portfolio-card reveal" data-category="cobertura-audiovisual">
+          <div class="portfolio-card-media portfolio-card-media-1"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 01</p>
+            <p class="portfolio-card-category">Cobertura audiovisual</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Festival de Cámara de Invierno</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal reveal-delay-1" data-category="rebranding">
+          <div class="portfolio-card-media portfolio-card-media-2"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 02</p>
+            <p class="portfolio-card-category">Rebranding</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Nueva identidad para orquesta de cámara</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal reveal-delay-2" data-category="fotografia-y-video">
+          <div class="portfolio-card-media portfolio-card-media-3"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 03</p>
+            <p class="portfolio-card-category">Fotografía y vídeo</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Sesión editorial para cuarteto residente</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal" data-category="contenido-para-redes">
+          <div class="portfolio-card-media portfolio-card-media-4"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 04</p>
+            <p class="portfolio-card-category">Contenido para redes</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Campaña digital para temporada sinfónica</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal reveal-delay-1" data-category="cobertura-audiovisual">
+          <div class="portfolio-card-media portfolio-card-media-5"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 05</p>
+            <p class="portfolio-card-category">Cobertura audiovisual</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Registro visual de academia de verano</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal reveal-delay-2" data-category="fotografia-y-video">
+          <div class="portfolio-card-media portfolio-card-media-6"></div>
+          <div class="portfolio-card-body">
+            <p class="portfolio-card-num">Proyecto 06</p>
+            <p class="portfolio-card-category">Fotografía y vídeo</p>
+            <div class="portfolio-card-meta">
+              <h2 class="portfolio-card-title">Retratos promocionales para solista invitada</h2>
+              <span class="portfolio-card-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-strip" id="contacto">
+      <div class="reveal">
+        <h2 class="cta-title">¿Tienes un<br>proyecto en<br><em>mente?</em></h2>
+      </div>
+      <div class="cta-right reveal reveal-delay-2">
+        <p class="cta-text">Cuéntanos tu historia. Juntos encontraremos la forma de traducirla en una identidad visual y digital que esté a la altura de tu música.</p>
+        <div class="cta-actions">
+          <a href="contacto.html" class="btn-primary">Escribirnos</a>
+          <a href="servicios.html" class="btn-outline">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2025 Moderato Studio. Todos los derechos reservados.</p>
+    <div class="footer-wordmark">Moderato Studio</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

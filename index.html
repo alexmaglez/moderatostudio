@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moderato Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logos/logo-horizontal-verde.png" alt="Moderato Studio" style="height: 120px; width: auto; display: block;" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">
+      <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn-outline">Hablemos</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <img id="heroMImage" src="assets/logos/logo-m-verde.png" alt="" aria-hidden="true" />
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span></span>Agencia creativa · Música clásica</p>
+      <h1 class="hero-title">
+        <span class="line">Donde el arte</span>
+        <span class="line">se convierte en</span>
+        <span class="line"><em>identidad.</em></span>
+      </h1>
+      <p class="hero-sub">Branding, imagen y comunicación visual para músicos, ensembles, festivales e instituciones clásicas. Desde dentro del ecosistema musical.</p>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn-primary">Ver nuestro trabajo</a>
+        <div class="hero-scroll"><span>Descubrir</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Cobertura audiovisual</div>
+      <div class="marquee-item">Contenido para redes</div>
+      <div class="marquee-item">Fotografía de conciertos</div>
+      <div class="marquee-item">Rebranding</div>
+      <div class="marquee-item">Diseño web</div>
+      <div class="marquee-item">Dirección creativa</div>
+      <div class="marquee-item">Identidad visual</div>
+      <div class="marquee-item">Cobertura audiovisual</div>
+      <div class="marquee-item">Contenido para redes</div>
+      <div class="marquee-item">Fotografía de conciertos</div>
+      <div class="marquee-item">Rebranding</div>
+      <div class="marquee-item">Diseño web</div>
+      <div class="marquee-item">Dirección creativa</div>
+      <div class="marquee-item">Identidad visual</div>
+    </div>
+  </div>
+
+  <!-- MANIFIESTO -->
+  <section class="manifesto">
+    <div class="manifesto-left reveal">
+      <div class="manifesto-number">01</div>
+      <p class="manifesto-tag">Quiénes somos</p>
+      <h2 class="manifesto-title">No somos<br>una agencia<br><em>cualquiera.</em></h2>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <p class="manifesto-text">Moderato Studio nace <strong>desde dentro del ecosistema musical.</strong> Entendemos sus códigos, su estética, sus tiempos y sus necesidades reales.</p>
+      <p class="manifesto-text">No traducimos el arte a píxeles. <strong>Lo habitamos, lo comprendemos y lo proyectamos</strong> con la elegancia que merece.</p>
+      <div class="manifesto-stat">
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Profesionales</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Pasión por la música</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Enfoque único</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-eyebrow">Lo que hacemos</p>
+        <h2 class="section-title">Servicios</h2>
+      </div>
+    </div>
+    <div class="services-list">
+      <div class="service-item reveal">
+        <span class="service-num">01</span>
+        <div>
+          <h3 class="service-name">Cobertura audiovisual</h3>
+          <p class="service-desc">Captamos la magia de conciertos, festivales y eventos con la sensibilidad que la música clásica exige.</p>
+          <div class="service-tags"><span class="tag">Conciertos</span><span class="tag">Festivales</span><span class="tag">Eventos</span></div>
+        </div>
+        <span class="service-arrow">↗</span>
+      </div>
+      <div class="service-item reveal reveal-delay-1">
+        <span class="service-num">02</span>
+        <div>
+          <h3 class="service-name">Contenido para redes</h3>
+          <p class="service-desc">Creación y distribución de contenido estratégico para músicos e instituciones. Cada publicación, una obra de comunicación.</p>
+          <div class="service-tags"><span class="tag">Instagram</span><span class="tag">YouTube</span><span class="tag">Estrategia</span></div>
+        </div>
+        <span class="service-arrow">↗</span>
+      </div>
+      <div class="service-item reveal reveal-delay-1">
+        <span class="service-num">03</span>
+        <div>
+          <h3 class="service-name">Fotografía & vídeo</h3>
+          <p class="service-desc">Sesiones para artistas, ensembles e instituciones. Imágenes que hablan antes de que suene la primera nota.</p>
+          <div class="service-tags"><span class="tag">Artistas</span><span class="tag">Prensa</span><span class="tag">Corporativo</span></div>
+        </div>
+        <span class="service-arrow">↗</span>
+      </div>
+      <div class="service-item reveal reveal-delay-2">
+        <span class="service-num">04</span>
+        <div>
+          <h3 class="service-name">Rebranding</h3>
+          <p class="service-desc">Redefinimos la identidad visual de organizaciones musicales con coherencia y visión estratégica.</p>
+          <div class="service-tags"><span class="tag">Identidad</span><span class="tag">Logo</span><span class="tag">Branding</span></div>
+        </div>
+        <span class="service-arrow">↗</span>
+      </div>
+      <div class="service-item reveal reveal-delay-2">
+        <span class="service-num">05</span>
+        <div>
+          <h3 class="service-name">Diseño web</h3>
+          <p class="service-desc">Webs elegantes, funcionales y con alma. Presencia digital que refleja la altura artística de quien la habita.</p>
+          <div class="service-tags"><span class="tag">Portfolio</span><span class="tag">Institucional</span><span class="tag">UX/UI</span></div>
+        </div>
+        <span class="service-arrow">↗</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-preview" id="portfolio">
+    <div class="portfolio-header reveal">
+      <div>
+        <p class="section-eyebrow">Nuestro trabajo</p>
+        <h2 class="section-title">Portfolio</h2>
+      </div>
+      <a href="#" class="btn-outline">Ver todo</a>
+    </div>
+    <div class="portfolio-grid reveal">
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder pp1"><span class="pp-m">M</span></div>
+        <div class="portfolio-item-inner">
+          <p class="portfolio-cat">Cobertura audiovisual</p>
+          <p class="portfolio-title">Festival de Música Antigua · 2024</p>
+        </div>
+        <div class="portfolio-zoom">↗</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder pp2"><span class="pp-m" style="font-size:5rem">M</span></div>
+        <div class="portfolio-item-inner">
+          <p class="portfolio-cat">Rebranding</p>
+          <p class="portfolio-title">Orquesta de Cámara · Identidad</p>
+        </div>
+        <div class="portfolio-zoom">↗</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder pp3"><span class="pp-m" style="font-size:5rem">M</span></div>
+        <div class="portfolio-item-inner">
+          <p class="portfolio-cat">Fotografía</p>
+          <p class="portfolio-title">Sesión artística · Cuarteto de cuerda</p>
+        </div>
+        <div class="portfolio-zoom">↗</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip" id="contacto">
+    <div class="reveal">
+      <h2 class="cta-title">¿Tienes un<br>proyecto en<br><em>mente?</em></h2>
+    </div>
+    <div class="cta-right reveal reveal-delay-2">
+      <p class="cta-text">Cuéntanos tu historia. Juntos encontraremos la forma de traducirla en una identidad visual y digital que esté a la altura de tu música.</p>
+      <div class="cta-actions">
+        <a href="contacto.html" class="btn-primary">Escribirnos</a>
+        <a href="servicios.html" class="btn-outline">Ver servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-copy">© 2025 Moderato Studio. Todos los derechos reservados.</p>
+    <div class="footer-wordmark">Moderato Studio</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Moderato Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logos/logo-horizontal-verde.png" alt="Moderato Studio" style="height: 120px; width: auto; display: block;" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">
+      <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn-outline">Hablemos</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero page-hero-compact">
+      <div class="page-hero-content reveal">
+        <p class="section-eyebrow">Hablemos</p>
+        <h1 class="page-title">Contacto</h1>
+        <p class="page-intro">Si estás construyendo una nueva etapa para tu proyecto musical, podemos ayudarte a darle forma visual y digital con claridad, elegancia y criterio. Escríbenos y encontraremos la manera más precisa de acompañarlo.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <p class="contact-kicker">Moderato Studio</p>
+          <p class="contact-text">Trabajamos con músicos, ensembles, festivales e instituciones que necesitan una identidad visual y una presencia pública a la altura de su propuesta artística. Cada conversación comienza con una escucha atenta, una mirada estratégica y el deseo de construir algo duradero.</p>
+          <a href="mailto:hola@moderato.studio" class="contact-email">hola@moderato.studio</a>
+          <ul class="contact-socials">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrap reveal reveal-delay-2">
+          <form class="contact-form">
+            <div class="form-field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" />
+            </div>
+
+            <div class="form-field">
+              <label for="tipo-proyecto">Tipo de proyecto</label>
+              <select id="tipo-proyecto" name="tipo-proyecto">
+                <option value="">Selecciona un servicio</option>
+                <option value="cobertura-audiovisual">Cobertura audiovisual</option>
+                <option value="contenido-para-redes">Contenido para redes</option>
+                <option value="fotografia-y-video">Fotografía y vídeo</option>
+                <option value="rebranding">Rebranding</option>
+                <option value="diseno-web">Diseño web</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="7"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-closing reveal">
+      <p class="contact-closing-text">Toda identidad memorable comienza con una conversación afinada.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2025 Moderato Studio. Todos los derechos reservados.</p>
+    <div class="footer-wordmark">Moderato Studio</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
