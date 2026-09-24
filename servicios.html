@@ -3,157 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servicios | Moderato Studio</title>
+  <title>Servicios · Moderato Studio</title>
+  <meta name="description" content="Cobertura audiovisual, contenido para redes, fotografía y vídeo, rebranding y diseño web para la música clásica." />
+  <meta name="theme-color" content="#f6f1ea" />
+  <link rel="icon" type="image/png" href="assets/logos/web/favicon.png" />
+  <script>
+    /* Idioma: elección guardada → idioma del dispositivo (es/ca/gl/eu → español; resto → inglés).
+       Si hay que traducir, la página se oculta hasta que main.js aplica los textos. */
+    (function (d) {
+      var l; try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (l !== 'es' && l !== 'en') {
+        var n = (navigator.languages && navigator.languages[0]) || navigator.language || 'es';
+        l = /^(es|ca|gl|eu)\b/i.test(n) ? 'es' : 'en';
+      }
+      d.lang = l;
+      d.classList.add('js');
+      if (l !== 'es') { d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+    })(document.documentElement);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
-<body>
+<body data-page="servicios">
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Saltar al contenido</a>
 
-  <nav id="nav">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logos/logo-horizontal-verde.png" alt="Moderato Studio" style="height: 120px; width: auto; display: block;" />
+  <!-- NAV -->
+  <nav id="nav" aria-label="Principal" data-i18n-attr="aria-label:nav.aria">
+    <a href="index.html" class="nav-logo" aria-label="Moderato Studio, inicio" data-i18n-attr="aria-label:nav.homeAria">
+      <img src="assets/logos/web/logo-horizontal-verde.webp" width="720" height="120" alt="Moderato Studio" />
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">
-      <span class="nav-toggle-icon" aria-hidden="true">☰</span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="servicios.html" aria-current="page" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="portfolio.html">Portfolio<sup class="soon-tag" data-i18n="soon.tag">Pronto</sup></a></li>
+      <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="contacto.html" class="btn-outline">Hablemos</a>
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
     </div>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn-outline" data-i18n="nav.cta">Hablemos</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
   </nav>
 
-  <main>
-    <section class="page-hero page-hero-compact">
-      <div class="page-hero-content reveal">
-        <p class="section-eyebrow">Lo que hacemos</p>
-        <h1 class="page-title">Servicios</h1>
-        <p class="page-intro">Diseñamos herramientas visuales y digitales para músicos, ensembles, festivales e instituciones clásicas. Cada servicio combina sensibilidad estética, comprensión del sector y una ejecución rigurosa para que la presencia pública de cada proyecto esté a la altura de su propuesta artística.</p>
-      </div>
+  <main id="main">
+    <section class="page-hero">
+      <p class="section-eyebrow reveal" data-i18n="services.eyebrow">Lo que hacemos</p>
+      <h1 class="page-title" data-lines data-i18n="nav.services">Servicios</h1>
+      <p class="page-intro reveal reveal-delay-2" data-i18n="services.intro">Diseñamos herramientas visuales y digitales para músicos, ensembles, festivales e instituciones clásicas, con sensibilidad estética, comprensión del sector y una ejecución rigurosa.</p>
+      <div class="staff" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     </section>
 
-    <section class="service-detail reveal">
-      <div class="service-detail-head">
-        <p class="service-detail-num">01</p>
-        <h2 class="service-detail-title">Cobertura audiovisual</h2>
-      </div>
+    <section class="service-detail" id="audiovisual">
+      <header class="service-detail-head">
+        <span class="service-detail-num reveal">I.</span>
+        <h2 class="service-detail-title" data-lines data-i18n="svc1.title">Cobertura<br>audiovisual</h2>
+        <div class="service-tags reveal" data-i18n="svc1.tags"><span class="tag">Conciertos</span><span class="tag">Festivales</span><span class="tag">Eventos</span></div>
+      </header>
       <div class="service-detail-body">
-        <p class="service-detail-text">Documentamos conciertos, festivales y eventos con una mirada que entiende el tempo, la puesta en escena y el valor simbólico de cada interpretación. No se trata solo de registrar lo que ocurre, sino de construir piezas que prolonguen la vida del acontecimiento más allá del directo. Trabajamos con criterio narrativo, atención al detalle y sensibilidad musical para que cada imagen conserve la atmósfera original. El resultado es un archivo visual elegante, útil y coherente con la identidad de la institución o del artista.</p>
-        <div class="service-detail-includes">
-          <p class="service-detail-label">Incluye</p>
-          <ul class="service-include-list">
+        <p class="lede reveal" data-i18n="svc1.lede">Documentamos conciertos, festivales y eventos con una mirada que entiende el tempo, la puesta en escena y el valor simbólico de cada interpretación.</p>
+        <p class="prose reveal" data-i18n="svc1.prose">No se trata solo de registrar lo que ocurre, sino de construir piezas que prolonguen la vida del acontecimiento más allá del directo. Trabajamos con criterio narrativo, atención al detalle y sensibilidad musical para que cada imagen conserve la atmósfera original. El resultado es un archivo visual elegante, útil y coherente con la identidad de la institución o del artista.</p>
+        <div class="service-detail-includes reveal">
+          <p class="label" data-i18n="services.includes">Incluye</p>
+          <ul class="service-include-list" data-i18n="svc1.list">
             <li>Cobertura de conciertos, festivales y actos institucionales</li>
             <li>Selección y edición de piezas audiovisuales finales</li>
             <li>Adaptaciones para web, prensa y redes sociales</li>
             <li>Entrega organizada para comunicación y archivo</li>
           </ul>
         </div>
-        <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+        <div class="reveal"><a href="contacto.html?servicio=cobertura-audiovisual" class="btn-primary" data-i18n="services.quote">Solicitar presupuesto <span class="arrow">→</span></a></div>
       </div>
     </section>
 
-    <section class="service-detail reveal reveal-delay-1">
-      <div class="service-detail-head">
-        <p class="service-detail-num">02</p>
-        <h2 class="service-detail-title">Contenido para redes</h2>
-      </div>
+    <section class="service-detail" id="redes">
+      <header class="service-detail-head">
+        <span class="service-detail-num reveal">II.</span>
+        <h2 class="service-detail-title" data-lines data-i18n="svc2.title">Contenido<br>para redes</h2>
+        <div class="service-tags reveal" data-i18n="svc2.tags"><span class="tag">Instagram</span><span class="tag">YouTube</span><span class="tag">Estrategia</span></div>
+      </header>
       <div class="service-detail-body">
-        <p class="service-detail-text">Creamos contenido pensado para posicionar proyectos musicales con coherencia, elegancia y continuidad. Diseñamos una narrativa que respeta el tono de cada artista o institución y evita caer en fórmulas genéricas alejadas del sector clásico. Planificamos piezas que comunican actividad, contexto y personalidad sin perder claridad estratégica. Así, las redes dejan de ser un escaparate improvisado y se convierten en un canal sólido de presencia pública.</p>
-        <div class="service-detail-includes">
-          <p class="service-detail-label">Incluye</p>
-          <ul class="service-include-list">
+        <p class="lede reveal" data-i18n="svc2.lede">Creamos contenido pensado para posicionar proyectos musicales con coherencia, elegancia y continuidad.</p>
+        <p class="prose reveal" data-i18n="svc2.prose">Diseñamos una narrativa que respeta el tono de cada artista o institución y evita caer en fórmulas genéricas alejadas del sector clásico. Planificamos piezas que comunican actividad, contexto y personalidad sin perder claridad estratégica. Así, las redes dejan de ser un escaparate improvisado y se convierten en un canal sólido de presencia pública.</p>
+        <div class="service-detail-includes reveal">
+          <p class="label" data-i18n="services.includes">Incluye</p>
+          <ul class="service-include-list" data-i18n="svc2.list">
             <li>Conceptualización y calendario de contenidos</li>
             <li>Redacción, diseño y adaptación por plataforma</li>
             <li>Piezas para lanzamientos, agenda y repertorio</li>
             <li>Apoyo en distribución y consistencia editorial</li>
           </ul>
         </div>
-        <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+        <div class="reveal"><a href="contacto.html?servicio=contenido-para-redes" class="btn-primary" data-i18n="services.quote">Solicitar presupuesto <span class="arrow">→</span></a></div>
       </div>
     </section>
 
-    <section class="service-detail reveal reveal-delay-2">
-      <div class="service-detail-head">
-        <p class="service-detail-num">03</p>
-        <h2 class="service-detail-title">Fotografía y vídeo</h2>
-      </div>
+    <section class="service-detail" id="fotografia">
+      <header class="service-detail-head">
+        <span class="service-detail-num reveal">III.</span>
+        <h2 class="service-detail-title" data-lines data-i18n="svc3.title">Fotografía<br><em>y vídeo</em></h2>
+        <div class="service-tags reveal" data-i18n="svc3.tags"><span class="tag">Artistas</span><span class="tag">Prensa</span><span class="tag">Corporativo</span></div>
+      </header>
       <div class="service-detail-body">
-        <p class="service-detail-text">Realizamos sesiones para artistas, ensembles e instituciones que necesitan una imagen contemporánea, sobria y bien construida. La dirección visual parte de la identidad del proyecto y del contexto en el que va a comunicarse: web, prensa, dossier o campaña. Cuidamos la composición, el gesto y la relación entre cuerpo, instrumento y espacio para generar materiales con presencia. Cada sesión busca producir imágenes duraderas, no solo recursos puntuales.</p>
-        <div class="service-detail-includes">
-          <p class="service-detail-label">Incluye</p>
-          <ul class="service-include-list">
+        <p class="lede reveal" data-i18n="svc3.lede">Realizamos sesiones para artistas, ensembles e instituciones que necesitan una imagen contemporánea, sobria y bien construida.</p>
+        <p class="prose reveal" data-i18n="svc3.prose">La dirección visual parte de la identidad del proyecto y del contexto en el que va a comunicarse: web, prensa, dossier o campaña. Cuidamos la composición, el gesto y la relación entre cuerpo, instrumento y espacio para generar materiales con presencia. Cada sesión busca producir imágenes duraderas, no solo recursos puntuales.</p>
+        <div class="service-detail-includes reveal">
+          <p class="label" data-i18n="services.includes">Incluye</p>
+          <ul class="service-include-list" data-i18n="svc3.list">
             <li>Dirección creativa de sesión fotográfica o de vídeo</li>
             <li>Retratos, materiales promocionales y piezas cortas</li>
             <li>Selección, edición y entrega final optimizada</li>
             <li>Adaptación para prensa, cartelería y plataformas digitales</li>
           </ul>
         </div>
-        <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+        <div class="reveal"><a href="contacto.html?servicio=fotografia-y-video" class="btn-primary" data-i18n="services.quote">Solicitar presupuesto <span class="arrow">→</span></a></div>
       </div>
     </section>
 
-    <section class="service-detail reveal">
-      <div class="service-detail-head">
-        <p class="service-detail-num">04</p>
-        <h2 class="service-detail-title">Rebranding</h2>
-      </div>
+    <section class="service-detail" id="rebranding">
+      <header class="service-detail-head">
+        <span class="service-detail-num reveal">IV.</span>
+        <h2 class="service-detail-title" data-lines>Rebranding</h2>
+        <div class="service-tags reveal" data-i18n="svc4.tags"><span class="tag">Identidad</span><span class="tag">Logo</span><span class="tag">Branding</span></div>
+      </header>
       <div class="service-detail-body">
-        <p class="service-detail-text">Acompañamos procesos de transformación visual cuando una marca musical ha crecido, ha cambiado de dirección o necesita redefinir su posicionamiento. El rebranding no es solo un ajuste estético, sino una herramienta para alinear percepción, ambición y contexto profesional. Revisamos la identidad existente, detectamos sus límites y construimos un sistema más preciso, reconocible y versátil. El objetivo es ofrecer una imagen con autoridad, continuidad y capacidad de evolucionar en el tiempo.</p>
-        <div class="service-detail-includes">
-          <p class="service-detail-label">Incluye</p>
-          <ul class="service-include-list">
+        <p class="lede reveal" data-i18n="svc4.lede">Acompañamos procesos de transformación visual cuando una marca musical ha crecido, ha cambiado de dirección o necesita redefinir su posicionamiento.</p>
+        <p class="prose reveal" data-i18n="svc4.prose">El rebranding no es solo un ajuste estético, sino una herramienta para alinear percepción, ambición y contexto profesional. Revisamos la identidad existente, detectamos sus límites y construimos un sistema más preciso, reconocible y versátil. El objetivo es ofrecer una imagen con autoridad, continuidad y capacidad de evolucionar en el tiempo.</p>
+        <div class="service-detail-includes reveal">
+          <p class="label" data-i18n="services.includes">Incluye</p>
+          <ul class="service-include-list" data-i18n="svc4.list">
             <li>Auditoría de identidad visual y posicionamiento</li>
             <li>Rediseño de logo, paleta y sistema gráfico</li>
             <li>Aplicaciones base para comunicación física y digital</li>
             <li>Lineamientos para mantener coherencia en el tiempo</li>
           </ul>
         </div>
-        <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+        <div class="reveal"><a href="contacto.html?servicio=rebranding" class="btn-primary" data-i18n="services.quote">Solicitar presupuesto <span class="arrow">→</span></a></div>
       </div>
     </section>
 
-    <section class="service-detail reveal reveal-delay-1 service-detail-last">
-      <div class="service-detail-head">
-        <p class="service-detail-num">05</p>
-        <h2 class="service-detail-title">Diseño web</h2>
-      </div>
+    <section class="service-detail" id="web">
+      <header class="service-detail-head">
+        <span class="service-detail-num reveal">V.</span>
+        <h2 class="service-detail-title" data-lines data-i18n="svc5.title">Diseño<br><em>web</em></h2>
+        <div class="service-tags reveal" data-i18n="svc5.tags"><span class="tag">Portfolio</span><span class="tag">Institucional</span><span class="tag">UX/UI</span></div>
+      </header>
       <div class="service-detail-body">
-        <p class="service-detail-text">Diseñamos webs elegantes, claras y funcionales para proyectos que necesitan transmitir nivel artístico desde el primer vistazo. Cada sitio se estructura para facilitar la lectura, ordenar contenidos complejos y reforzar la identidad visual sin artificios innecesarios. Pensamos la experiencia desde la sensibilidad editorial, la jerarquía tipográfica y la utilidad real para programadores, artistas o instituciones. El resultado es una presencia digital serena, precisa y preparada para crecer.</p>
-        <div class="service-detail-includes">
-          <p class="service-detail-label">Incluye</p>
-          <ul class="service-include-list">
+        <p class="lede reveal" data-i18n="svc5.lede">Diseñamos webs elegantes, claras y funcionales para proyectos que necesitan transmitir nivel artístico desde el primer vistazo.</p>
+        <p class="prose reveal" data-i18n="svc5.prose">Cada sitio se estructura para facilitar la lectura, ordenar contenidos complejos y reforzar la identidad visual sin artificios innecesarios. Pensamos la experiencia desde la sensibilidad editorial, la jerarquía tipográfica y la utilidad real para programadores, artistas o instituciones. El resultado es una presencia digital serena, precisa y preparada para crecer.</p>
+        <div class="service-detail-includes reveal">
+          <p class="label" data-i18n="services.includes">Incluye</p>
+          <ul class="service-include-list" data-i18n="svc5.list">
             <li>Arquitectura de información y diseño de interfaz</li>
             <li>Diseño responsive con coherencia visual global</li>
             <li>Integración de portfolio, agenda o contenidos editoriales</li>
             <li>Base preparada para evolución y mantenimiento</li>
           </ul>
         </div>
-        <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+        <div class="reveal"><a href="contacto.html?servicio=diseno-web" class="btn-primary" data-i18n="services.quote">Solicitar presupuesto <span class="arrow">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="cta-strip on-dark">
+      <h2 class="cta-title" data-lines data-i18n="services.cta.title">¿No sabes<br>por dónde<br><em>empezar?</em></h2>
+      <div class="cta-right reveal reveal-delay-2">
+        <p class="cta-text" data-i18n="services.cta.text">Muchos proyectos combinan varias disciplinas. Cuéntanos en qué momento estás y te proponemos la partitura que mejor encaje.</p>
+        <div class="cta-actions">
+          <a href="contacto.html" class="btn-primary" data-i18n="cta.write">Escríbenos <span class="arrow">→</span></a>
+          <a href="index.html#metodo" class="btn-outline" data-i18n="services.cta.method">Cómo trabajamos</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p class="footer-copy">© 2025 Moderato Studio. Todos los derechos reservados.</p>
-    <div class="footer-wordmark">Moderato Studio</div>
-    <ul class="footer-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="footer-logo" aria-label="Moderato Studio, inicio" data-i18n-attr="aria-label:nav.homeAria">
+          <img src="assets/logos/web/logo-horizontal-crema.webp" width="720" height="124" alt="Moderato Studio" loading="lazy" />
+        </a>
+        <p class="footer-claim" data-i18n="footer.claim">Imagen y comunicación para la música clásica.</p>
+      </div>
+      <div class="footer-col">
+        <p class="label" data-i18n="footer.nav">Navegación</p>
+        <ul>
+          <li><a href="index.html" data-i18n="footer.home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="label" data-i18n="footer.write">Escríbenos</p>
+        <ul>
+          <li><a href="mailto:moderatostudio.es@gmail.com">moderatostudio.es@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Moderato Studio</p>
+      <p data-i18n="footer.tempo">Compuesto en tempo <em>moderato</em></p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>

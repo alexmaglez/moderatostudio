@@ -3,154 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Moderato Studio</title>
+  <title>Portfolio · Moderato Studio</title>
+  <meta name="description" content="Muy pronto: nuestra selección de proyectos para la música clásica." />
+  <meta name="theme-color" content="#f6f1ea" />
+  <link rel="icon" type="image/png" href="assets/logos/web/favicon.png" />
+  <script>
+    /* Idioma: elección guardada → idioma del dispositivo (es/ca/gl/eu → español; resto → inglés).
+       Si hay que traducir, la página se oculta hasta que main.js aplica los textos. */
+    (function (d) {
+      var l; try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (l !== 'es' && l !== 'en') {
+        var n = (navigator.languages && navigator.languages[0]) || navigator.language || 'es';
+        l = /^(es|ca|gl|eu)\b/i.test(n) ? 'es' : 'en';
+      }
+      d.lang = l;
+      d.classList.add('js');
+      if (l !== 'es') { d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+    })(document.documentElement);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
-<body>
+<body data-page="portfolio">
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Saltar al contenido</a>
 
-  <nav id="nav">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logos/logo-horizontal-verde.png" alt="Moderato Studio" style="height: 120px; width: auto; display: block;" />
+  <!-- NAV -->
+  <nav id="nav" aria-label="Principal" data-i18n-attr="aria-label:nav.aria">
+    <a href="index.html" class="nav-logo" aria-label="Moderato Studio, inicio" data-i18n-attr="aria-label:nav.homeAria">
+      <img src="assets/logos/web/logo-horizontal-verde.webp" width="720" height="120" alt="Moderato Studio" />
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú">
-      <span class="nav-toggle-icon" aria-hidden="true">☰</span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="portfolio.html" aria-current="page">Portfolio<sup class="soon-tag" data-i18n="soon.tag">Pronto</sup></a></li>
+      <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="contacto.html" class="btn-outline">Hablemos</a>
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
     </div>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn-outline" data-i18n="nav.cta">Hablemos</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
   </nav>
 
-  <main>
-    <section class="page-hero page-hero-compact">
-      <div class="page-hero-content reveal">
-        <p class="section-eyebrow">Nuestro trabajo</p>
-        <h1 class="page-title">Portfolio</h1>
-        <p class="page-intro">Una selección de proyectos concebidos para artistas e instituciones que necesitan una imagen precisa, sobria y con verdadera profundidad visual. Cada pieza combina estrategia, sensibilidad estética y conocimiento del contexto musical al que se dirige.</p>
-      </div>
+  <main id="main">
+    <section class="page-hero">
+      <p class="section-eyebrow reveal" data-i18n="portfolio.eyebrow">Nuestro trabajo</p>
+      <h1 class="page-title" data-lines>Portfolio</h1>
+      <p class="page-intro reveal reveal-delay-2" data-i18n="portfolio.intro">Estamos reuniendo una selección de proyectos para artistas e instituciones que necesitan una imagen precisa, sobria y con verdadera profundidad visual.</p>
+      <div class="staff" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     </section>
 
     <section class="portfolio-page-section">
-      <div class="portfolio-filters reveal">
-        <button type="button" class="btn-outline filter-button is-active" data-filter="all">Todos</button>
-        <button type="button" class="btn-outline filter-button" data-filter="cobertura-audiovisual">Cobertura audiovisual</button>
-        <button type="button" class="btn-outline filter-button" data-filter="fotografia-y-video">Fotografía y vídeo</button>
-        <button type="button" class="btn-outline filter-button" data-filter="rebranding">Rebranding</button>
-        <button type="button" class="btn-outline filter-button" data-filter="contenido-para-redes">Contenido para redes</button>
-      </div>
-
-      <div class="portfolio-page-grid">
-        <article class="portfolio-card reveal" data-category="cobertura-audiovisual">
-          <div class="portfolio-card-media portfolio-card-media-1"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 01</p>
-            <p class="portfolio-card-category">Cobertura audiovisual</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Festival de Cámara de Invierno</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="portfolio-card reveal reveal-delay-1" data-category="rebranding">
-          <div class="portfolio-card-media portfolio-card-media-2"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 02</p>
-            <p class="portfolio-card-category">Rebranding</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Nueva identidad para orquesta de cámara</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="portfolio-card reveal reveal-delay-2" data-category="fotografia-y-video">
-          <div class="portfolio-card-media portfolio-card-media-3"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 03</p>
-            <p class="portfolio-card-category">Fotografía y vídeo</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Sesión editorial para cuarteto residente</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="portfolio-card reveal" data-category="contenido-para-redes">
-          <div class="portfolio-card-media portfolio-card-media-4"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 04</p>
-            <p class="portfolio-card-category">Contenido para redes</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Campaña digital para temporada sinfónica</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="portfolio-card reveal reveal-delay-1" data-category="cobertura-audiovisual">
-          <div class="portfolio-card-media portfolio-card-media-5"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 05</p>
-            <p class="portfolio-card-category">Cobertura audiovisual</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Registro visual de academia de verano</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="portfolio-card reveal reveal-delay-2" data-category="fotografia-y-video">
-          <div class="portfolio-card-media portfolio-card-media-6"></div>
-          <div class="portfolio-card-body">
-            <p class="portfolio-card-num">Proyecto 06</p>
-            <p class="portfolio-card-category">Fotografía y vídeo</p>
-            <div class="portfolio-card-meta">
-              <h2 class="portfolio-card-title">Retratos promocionales para solista invitada</h2>
-              <span class="portfolio-card-arrow">↗</span>
-            </div>
-          </div>
-        </article>
+      <div class="soon soon--page reveal">
+        <p class="label" data-i18n="soon.label">En ensayo</p>
+        <p class="soon-title" data-i18n="soon.title">Próximamente</p>
+        <p class="soon-text" data-i18n="soon.text">Estamos preparando la selección de proyectos. Muy pronto podrás verla aquí.</p>
+        <a href="contacto.html" class="link" data-i18n="soon.link">Mientras tanto, hablemos <span class="arrow">→</span></a>
       </div>
     </section>
 
-    <section class="cta-strip" id="contacto">
-      <div class="reveal">
-        <h2 class="cta-title">¿Tienes un<br>proyecto en<br><em>mente?</em></h2>
-      </div>
+    <section class="cta-strip on-dark">
+      <h2 class="cta-title" data-lines data-i18n="cta.title">¿Tienes un<br>proyecto en<br><em>mente?</em></h2>
       <div class="cta-right reveal reveal-delay-2">
-        <p class="cta-text">Cuéntanos tu historia. Juntos encontraremos la forma de traducirla en una identidad visual y digital que esté a la altura de tu música.</p>
+        <p class="cta-text" data-i18n="cta.text">Cuéntanos tu historia. Juntos encontraremos la forma de traducirla en una identidad visual y digital que esté a la altura de tu música.</p>
         <div class="cta-actions">
-          <a href="contacto.html" class="btn-primary">Escribirnos</a>
-          <a href="servicios.html" class="btn-outline">Ver servicios</a>
+          <a href="contacto.html" class="btn-primary" data-i18n="cta.write">Escríbenos <span class="arrow">→</span></a>
+          <a href="servicios.html" class="btn-outline" data-i18n="cta.servicesPlain">Ver servicios</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p class="footer-copy">© 2025 Moderato Studio. Todos los derechos reservados.</p>
-    <div class="footer-wordmark">Moderato Studio</div>
-    <ul class="footer-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="footer-logo" aria-label="Moderato Studio, inicio" data-i18n-attr="aria-label:nav.homeAria">
+          <img src="assets/logos/web/logo-horizontal-crema.webp" width="720" height="124" alt="Moderato Studio" loading="lazy" />
+        </a>
+        <p class="footer-claim" data-i18n="footer.claim">Imagen y comunicación para la música clásica.</p>
+      </div>
+      <div class="footer-col">
+        <p class="label" data-i18n="footer.nav">Navegación</p>
+        <ul>
+          <li><a href="index.html" data-i18n="footer.home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="label" data-i18n="footer.write">Escríbenos</p>
+        <ul>
+          <li><a href="mailto:moderatostudio.es@gmail.com">moderatostudio.es@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Moderato Studio</p>
+      <p data-i18n="footer.tempo">Compuesto en tempo <em>moderato</em></p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
